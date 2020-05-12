@@ -16,8 +16,10 @@
 
   <!-- 页面元数据 -->
   
-    <title>Hexo - Arianna-blog</title>
+    <title>Python+Django在线课堂项目（1）项目准备:基本配置 - Arianna-blog</title>
   
+  
+    <meta name="description" content="环境：我用的是python2~~当前需要的包还有django，python-MYSQL">
   
 
   <!-- feed -->
@@ -319,7 +321,7 @@
   
 
   
-    <article id="page" class="post white-box reveal blur article-type-page" itemscope itemprop="blogPost">
+    <article id="post" class="post white-box reveal blur article-type-post" itemscope itemprop="blogPost">
       
 
 
@@ -331,8 +333,8 @@
         
           
   <h1 class="title">
-    <a href="/Hexo/index.html">
-      Hexo
+    <a href="/2020/05/10/Python+Django%E5%9C%A8%E7%BA%BF%E8%AF%BE%E5%A0%82%E9%A1%B9%E7%9B%AE%EF%BC%881%EF%BC%89%E9%A1%B9%E7%9B%AE%E5%87%86%E5%A4%87_%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/">
+      Python+Django在线课堂项目（1）项目准备:基本配置
     </a>
   </h1>
 
@@ -355,6 +357,14 @@
           
             
               
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/Django-Web/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>Django-Web</p>
+    </a>
+  </div>
+
 
             
           
@@ -362,7 +372,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：May 11, 2020</p>
+    <p>发布于：May 10, 2020</p>
   </a>
 </div>
 
@@ -385,7 +395,76 @@
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
           
+          <p><strong>环境：</strong><br><img src="https://upload-images.jianshu.io/upload_images/14394806-d2fa7a305c4bbd61.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>我用的是python2~~<br>当前需要的包还有django，python-MYSQL</p>
+<a id="more"></a>
+
+<h5 id="1-新建项目"><a href="#1-新建项目" class="headerlink" title="1.新建项目"></a>1.新建项目</h5><p><img src="https://upload-images.jianshu.io/upload_images/14394806-9701437645d69c19.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h5 id="2-在setting中设置数据库"><a href="#2-在setting中设置数据库" class="headerlink" title="2.在setting中设置数据库"></a>2.在setting中设置数据库</h5><p><img src="https://upload-images.jianshu.io/upload_images/14394806-682d4b2d5f2a1b82.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>这个位置是Django原来默认使用的数据库sqlite3，把他改成mysql数据库的相关设置。<br><img src="https://upload-images.jianshu.io/upload_images/14394806-58bff8cf4608f3c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h5 id="3-在setting中配置国际化部分"><a href="#3-在setting中配置国际化部分" class="headerlink" title="3.在setting中配置国际化部分"></a>3.在setting中配置国际化部分</h5><p><img src="https://upload-images.jianshu.io/upload_images/14394806-172e2b2a50f5512b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/14394806-a1298e945bcb0cf4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h5 id="4-在setting中配置静态文件部分"><a href="#4-在setting中配置静态文件部分" class="headerlink" title="4.在setting中配置静态文件部分"></a>4.在setting中配置静态文件部分</h5><p><img src="https://upload-images.jianshu.io/upload_images/14394806-ac2ee72b33594c65.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>增加如下部分：<br><code>STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, &#39;static&#39;)
+]</code><br><img src="https://upload-images.jianshu.io/upload_images/14394806-e6eed749d1885b05.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>###<br>在项目根目录下新建static文件夹<br><img src="https://upload-images.jianshu.io/upload_images/14394806-7b12093dd4cde477.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h5 id="5-在setting中配置媒体文件路径"><a href="#5-在setting中配置媒体文件路径" class="headerlink" title="5.在setting中配置媒体文件路径"></a>5.在setting中配置媒体文件路径</h5><p>在setting最后添加：<br><code>MEDIA_URL = &#39;/static/media/&#39;
+MEDIA_ROOT = os.path.join(BASE_DIR, &#39;static/media&#39;)</code><br><img src="https://upload-images.jianshu.io/upload_images/14394806-28e0fa2d28a2c60c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>添加媒体处理器：<br>在这个部分添加：<br><img src="https://upload-images.jianshu.io/upload_images/14394806-9b168fdaa642687e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><code>&#39;django.template.context_processors.media&#39;,</code><br><img src="https://upload-images.jianshu.io/upload_images/14394806-c3cf5496e34e9581.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h5 id="5-新建数据库"><a href="#5-新建数据库" class="headerlink" title="5.新建数据库"></a>5.新建数据库</h5><p><img src="https://upload-images.jianshu.io/upload_images/14394806-8d00ab079203cea9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>然后运行一下：<br><img src="https://upload-images.jianshu.io/upload_images/14394806-903cfda28a23813a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>我这提示了一个错误<br>Did you install mysqlclient or MySQL-python?<br>安装了MySQL-python后依旧提示这个错误</p>
+<p>搜了搜解决办法：<br><a href="https://zhuanlan.zhihu.com/p/27577850" target="_blank" rel="noopener">django 搭建mysql数据库全过程</a></p>
+<blockquote>
+<p>python2.x使用MySQLdb，python3.x使用PyMysql模块。<br>如果出现这个，我们首先pip install pymysql, 我用的是python的2.13 版本<br>然后在django项目的<strong>init</strong>下设置：<br><code>import pymysql</code><br><code>pymysql.install_as_MySQLdb()</code></p>
+</blockquote>
+<p><img src="https://upload-images.jianshu.io/upload_images/14394806-fa3de48e195d49b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/14394806-66b1b6670b91b389.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>再运行一下就没有问题了<br><img src="https://upload-images.jianshu.io/upload_images/14394806-44d6f664afe80859.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>说明配置成功了~</p>
+<h5 id="6-配置路由"><a href="#6-配置路由" class="headerlink" title="6.配置路由"></a>6.配置路由</h5><p><img src="https://upload-images.jianshu.io/upload_images/14394806-643557e20b5d4778.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>把这个目录下的urls.py文件复制一份到users目录下面。<br><img src="https://upload-images.jianshu.io/upload_images/14394806-b2900cf92e2fc032.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>这样项目就新建好了~<br>接下来把所有的APP都建好</p>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><p>在terminal输入<code>python manage.py startapp courses</code>新建courses的app，我在pycharm中的终端输入出错了，在cmd里成功了。。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/14394806-86c67871063f3370.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/14394806-3af5073312fead56.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h5 id="7-新建其他app"><a href="#7-新建其他app" class="headerlink" title="7.新建其他app"></a>7.新建其他app</h5><p>接下来把orgs和operations也建好</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/14394806-c029de6a514ac938.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>建完后的app会出现在项目目录里：<br><img src="https://upload-images.jianshu.io/upload_images/14394806-29de957b3c242634.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>然后在settings中把建好的app配置进去<br>在这个位置：<br><img src="https://upload-images.jianshu.io/upload_images/14394806-cea879d853e2463f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>修改如下：<br><img src="https://upload-images.jianshu.io/upload_images/14394806-9a5c22a42a03c8a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>在urls里也要配置新建的app<br><img src="https://upload-images.jianshu.io/upload_images/14394806-2b64f39ce6f0eda2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>在每个app里把刚刚修改的urls.py文件复制一份。<br><img src="https://upload-images.jianshu.io/upload_images/14394806-4fba69e5bcf92755.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h5 id="8-建立单独的包来管理app"><a href="#8-建立单独的包来管理app" class="headerlink" title="8.建立单独的包来管理app"></a>8.建立单独的包来管理app</h5><p><img src="https://upload-images.jianshu.io/upload_images/14394806-7379b3bece0f9ef9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>命名为apps<br><img src="https://upload-images.jianshu.io/upload_images/14394806-66fa431a3b2244dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>把四个app放到apps包下<br><img src="https://upload-images.jianshu.io/upload_images/14394806-6506d6d92b54e335.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>移动的时候要把这个勾取消掉<br><img src="https://upload-images.jianshu.io/upload_images/14394806-595bf360f31a88ed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>新的目录结构:<br><img src="https://upload-images.jianshu.io/upload_images/14394806-eba3a44c441f1c5a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>有单击apps包<br><img src="https://upload-images.jianshu.io/upload_images/14394806-624ebef54b4551fd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>在settings文件中修改配置<br><img src="https://upload-images.jianshu.io/upload_images/14394806-4b1635cff2303a42.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/14394806-cf1d4a431471283b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>至此Django Web的所有配置部分就完成啦！</p>
+
           
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+
+  
+
+
+              
+            </div>
           
         </div>
         
@@ -396,10 +475,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-11T09:17:57+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-12T11:23:12+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：May 11, 2020</p>
+    <p>更新于：May 12, 2020</p>
   </a>
 </div>
 
@@ -423,7 +502,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/Hexo/index.html&title=Hexo - Arianna-blog&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/05/10/Python+Django%E5%9C%A8%E7%BA%BF%E8%AF%BE%E5%A0%82%E9%A1%B9%E7%9B%AE%EF%BC%881%EF%BC%89%E9%A1%B9%E7%9B%AE%E5%87%86%E5%A4%87_%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/&title=Python+Django在线课堂项目（1）项目准备:基本配置 - Arianna-blog&summary=环境：我用的是python2~~当前需要的包还有django，python-MYSQL"
           
           >
           
@@ -435,7 +514,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/Hexo/index.html&title=Hexo - Arianna-blog&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/05/10/Python+Django%E5%9C%A8%E7%BA%BF%E8%AF%BE%E5%A0%82%E9%A1%B9%E7%9B%AE%EF%BC%881%EF%BC%89%E9%A1%B9%E7%9B%AE%E5%87%86%E5%A4%87_%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/&title=Python+Django在线课堂项目（1）项目准备:基本配置 - Arianna-blog&summary=环境：我用的是python2~~当前需要的包还有django，python-MYSQL"
           
           >
           
@@ -447,7 +526,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/Hexo/index.html&title=Hexo - Arianna-blog&summary="
+          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/05/10/Python+Django%E5%9C%A8%E7%BA%BF%E8%AF%BE%E5%A0%82%E9%A1%B9%E7%9B%AE%EF%BC%881%EF%BC%89%E9%A1%B9%E7%9B%AE%E5%87%86%E5%A4%87_%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/&title=Python+Django在线课堂项目（1）项目准备:基本配置 - Arianna-blog&summary=环境：我用的是python2~~当前需要的包还有django，python-MYSQL"
           
           >
           
@@ -468,6 +547,18 @@
 
 
         
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/2020/05/09/%E7%BD%AE%E9%A1%B6/'>
+                <p class='title'>置顶<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>博客搬迁中。。。源地址：https://www.jianshu.com/u/400aba58cff5
+博客主题出处：https://volantis.js.org/
+</p>
+              </a>
+            
+          </div>
         
       </section>
     </article>
@@ -507,6 +598,13 @@
 
 
 
+  <script>
+    window.subData = {
+      title: 'Python+Django在线课堂项目（1）项目准备:基本配置',
+      tools: true
+    }
+  </script>
+
 
 </div>
 <aside class='l_side'>
@@ -517,6 +615,20 @@
     
     
 
+
+  <section class="widget toc-wrapper shadow floatable blur desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-新建项目"><span class="toc-text">1.新建项目</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-在setting中设置数据库"><span class="toc-text">2.在setting中设置数据库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-在setting中配置国际化部分"><span class="toc-text">3.在setting中配置国际化部分</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-在setting中配置静态文件部分"><span class="toc-text">4.在setting中配置静态文件部分</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-在setting中配置媒体文件路径"><span class="toc-text">5.在setting中配置媒体文件路径</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-新建数据库"><span class="toc-text">5.新建数据库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-配置路由"><span class="toc-text">6.配置路由</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-text"></span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#7-新建其他app"><span class="toc-text">7.新建其他app</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8-建立单独的包来管理app"><span class="toc-text">8.建立单独的包来管理app</span></a></li></ol>
+    </div>
+  </section>
 
 
   

@@ -18,7 +18,7 @@
 
   <!-- 页面元数据 -->
   
-    <title>Archive: 2020/3 - Arianna-blog</title>
+    <title>Category: Django-Web - Arianna-blog</title>
   
   
 
@@ -70,81 +70,7 @@
 
 <body>
   
-  <div class="cover-wrapper">
-    
-      <cover class='cover  half'>
-        <div class='cover-body'>
-  <div class='a'>
-    
-    
-      <p class="title">Hi! This is Arianna!</p>
-    
-    
-      <p class="subtitle">Welcome to my blog!</p>
-    
-  </div>
-  <div class='b'>
-    
-      <div class="m_search">
-        <form name="searchform" class="form u-search-form">
-          <input type="text" class="input u-search-input" placeholder="" />
-          <i class="icon fas fa-search fa-fw"></i>
-        </form>
-      </div>
-    
-    <div class='menu navigation'>
-      <ul class='cover-list-h'>
-        
-          
-            <li>
-              <a class="nav home"
-                href="/blogs/"
-                
-                
-                id="blogs">
-                <i class='fas fa-splotch fa-fw'></i>博客
-              </a>
-            </li>
-          
-            <li>
-              <a class="nav home"
-                href="https://www.jianshu.com/u/400aba58cff5"
-                
-                
-                id="https:wwwjianshucomu400aba58cff5">
-                <i class='fas fa-heart fa-fw'></i>我的简书
-              </a>
-            </li>
-          
-            <li>
-              <a class="nav home"
-                href="https://github.com/Sevenven777"
-                
-                
-                id="https:githubcomSevenven777">
-                <i class='fab fa-github fa-fw'></i>Github
-              </a>
-            </li>
-          
-            <li>
-              <a class="nav home"
-                href="/Django-Web/"
-                
-                
-                id="Django-Web">
-                <i class='far fa-bookmark fa-fw'></i>Django-Web
-              </a>
-            </li>
-          
-        
-      </ul>
-    </div>
-  </div>
-</div>
-
-      </cover>
-    
-    <div id="loading-bar-wrapper">
+  <div id="loading-bar-wrapper">
   <div id="loading-bar"></div>
 </div>
 <header class="l_header shadow floatable blur">
@@ -385,16 +311,17 @@
 
 <script>setLoadingBarProgress(40);</script>
 
-  </div>
 
 
-  <div class="l_body">
+  <div class="l_body nocover">
     <div class='body-wrapper'>
       
 
+
 <div class='l_main'>
-	
-		
+  
+    
+      
   <section class="post-list ">
     
       
@@ -419,8 +346,8 @@
         
           
   <h2 class="title">
-    <a href="/2020/03/11/Python%E5%AE%9E%E7%8E%B0%E6%8E%92%E5%BA%8F%E5%8F%8A%E6%97%B6%E9%97%B4%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90/">
-      Python实现排序及时间空间复杂度分析
+    <a href="/2020/05/10/Python+Django%E5%9C%A8%E7%BA%BF%E8%AF%BE%E5%A0%82%E9%A1%B9%E7%9B%AE%EF%BC%881%EF%BC%89%E9%A1%B9%E7%9B%AE%E5%87%86%E5%A4%87_%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/">
+      Python+Django在线课堂项目（1）项目准备:基本配置
     </a>
   </h2>
 
@@ -443,6 +370,14 @@
           
             
               
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/Django-Web/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>Django-Web</p>
+    </a>
+  </div>
+
 
             
           
@@ -450,7 +385,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Mar 11, 2020</p>
+    <p>发布于：May 10, 2020</p>
   </a>
 </div>
 
@@ -461,13 +396,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>2.3k words</p>
+      <p>505 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>9 min</p>
+      <p>1 min</p>
     </a>
   </div>
 
@@ -491,21 +426,13 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="一、冒泡排序（Bubble-Sort）"><a href="#一、冒泡排序（Bubble-Sort）" class="headerlink" title="一、冒泡排序（Bubble Sort）"></a>一、冒泡排序（Bubble Sort）</h3><p><strong>原理：</strong></p>
-<blockquote>
-<ol>
-<li>比较相邻的元素。如果第一个比第二个大，就交换他们两个。（从头到尾，从尾到头都可以）</li>
-<li>对每一对相邻元素做同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。</li>
-<li>针对所有的元素重复以上的步骤，除了最后一个。</li>
-<li>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</li>
-</ol>
-</blockquote>
+        <p><strong>环境：</strong><br><img src="https://upload-images.jianshu.io/upload_images/14394806-d2fa7a305c4bbd61.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>我用的是python2~~<br>当前需要的包还有django，python-MYSQL</p>
       
     </div>
     
       
         <div class="button readmore">
-          <a href="/2020/03/11/Python%E5%AE%9E%E7%8E%B0%E6%8E%92%E5%BA%8F%E5%8F%8A%E6%97%B6%E9%97%B4%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90/">
+          <a href="/2020/05/10/Python+Django%E5%9C%A8%E7%BA%BF%E8%AF%BE%E5%A0%82%E9%A1%B9%E7%9B%AE%EF%BC%881%EF%BC%89%E9%A1%B9%E7%9B%AE%E5%87%86%E5%A4%87_%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/">
             Read More <i class="fas fa-chevron-right"></i>
           </a>
         </div>
@@ -528,7 +455,9 @@
   
 
 
-	
+    
+  
+
 </div>
 <aside class='l_side'>
   
@@ -701,14 +630,6 @@
   </footer>
 
 <script>setLoadingBarProgress(80);</script>
-
-
-
-
-	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-	
-
-	
 
 
       <script>setLoadingBarProgress(60);</script>
