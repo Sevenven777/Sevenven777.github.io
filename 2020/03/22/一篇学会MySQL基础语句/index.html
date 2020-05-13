@@ -16,8 +16,15 @@
 
   <!-- 页面元数据 -->
   
-    <title>Arianna_blog</title>
+    <title>一篇学会MySQL基础语句 - Arianna_blog</title>
   
+    <meta name="keywords" content="MySQL">
+  
+  
+    <meta name="description" content="MySQL是一个关系型数据库，查询的结果是一个虚拟的表格。
+
+关系型数据库，是指采用了关系模型来组织数据的数据库，其以行和列的形式存储数据，以便于用户理解，关系型数据库这一系列的行和列被称为表，一组表组成了数据库。 用户通过查询来检索数据库中的数据，而查询是一个用于限定数据库中某些区域的执行代码。
+">
   
 
   <!-- feed -->
@@ -389,7 +396,7 @@
   
 
   
-    <article id="page" class="post white-box reveal blur article-type-page" itemscope itemprop="blogPost">
+    <article id="post" class="post white-box reveal blur article-type-post" itemscope itemprop="blogPost">
       
 
 
@@ -401,8 +408,8 @@
         
           
   <h1 class="title">
-    <a href="/Hexo/index.html">
-      May 12, 2020
+    <a href="/2020/03/22/%E4%B8%80%E7%AF%87%E5%AD%A6%E4%BC%9AMySQL%E5%9F%BA%E7%A1%80%E8%AF%AD%E5%8F%A5/">
+      一篇学会MySQL基础语句
     </a>
   </h1>
 
@@ -425,6 +432,14 @@
           
             
               
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/MySQL/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>MySQL</p>
+    </a>
+  </div>
+
 
             
           
@@ -432,7 +447,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：May 12, 2020</p>
+    <p>发布于：Mar 22, 2020</p>
   </a>
 </div>
 
@@ -455,16 +470,102 @@
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
           
-          <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+          <p>MySQL是一个关系型数据库，查询的结果是一个虚拟的表格。</p>
+<blockquote>
+<p>关系型数据库，是指采用了关系模型来组织数据的数据库，其以行和列的形式存储数据，以便于用户理解，关系型数据库这一系列的行和列被称为表，一组表组成了数据库。 用户通过查询来检索数据库中的数据，而查询是一个用于限定数据库中某些区域的执行代码。</p>
+</blockquote>
+<a id="more"></a>
 
-</body>
-</html>
+<ul>
+<li>MySQL服务通过命令行的启动和停止<br><code>net start 服务名</code><br><code>net stop 服务名</code></li>
+<li>MySQL服务服务器的登录和退出<br>登录：<code>mysql 【-h 主机名 -p 端口号】 -u 用户名 -p 密码</code><br><img src="https://upload-images.jianshu.io/upload_images/14394806-563b235f8558d01c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></li>
+</ul>
+<p>退出：<code>exit</code>或<code>ctrl + c</code><br><img src="https://upload-images.jianshu.io/upload_images/14394806-a8c3e21b8daa9c8b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h3><p>输入查询的数据库名：<br><code>USE 数据库名;</code><br><img src="https://upload-images.jianshu.io/upload_images/14394806-b74513ca5f18a841.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>查询数据库下的表名：<br><code>SHOW TABLES;</code><br><img src="https://upload-images.jianshu.io/upload_images/14394806-6c29bcde298b1a06.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>查看表的结构：<br><code>DESC 表名;</code><br><img src="https://upload-images.jianshu.io/upload_images/14394806-0e83ccb68721bdc9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>获取表的字段名:<br><code>SHOW COLUMNS FROM 表名;</code><br><img src="https://upload-images.jianshu.io/upload_images/14394806-4a24e5ed741b7700.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h5 id="简单查询："><a href="#简单查询：" class="headerlink" title="简单查询："></a>简单查询：</h5><p><code>SELECT 查询列表  FROM 表名;</code><br>查询列表可以是字段、常量，表达式、函数，可以是多个<br>查询结果是一个虚拟的表<br>1.查询单个字段：<br><code>SELECT 字段名 FROM 表名;</code><br><img src="https://upload-images.jianshu.io/upload_images/14394806-ad98cbfb92427958.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>2.查询多个字段<br><code>SELECT 字段名,字段名 FROM 表名;</code><br><img src="https://upload-images.jianshu.io/upload_images/14394806-c676340ed469be2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>3.查询所有字段<br><code>SELECT * FROM 表名;</code><br><img src="https://upload-images.jianshu.io/upload_images/14394806-9ffded03a956c24a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>4.常量查询<br><code>SELECT 常量值;</code><br><img src="https://upload-images.jianshu.io/upload_images/14394806-855305fc7039c756.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/14394806-e95a75ffaf331d40.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>5.查询函数<br><code>SELECT 函数名（实参列表）;</code><br><img src="https://upload-images.jianshu.io/upload_images/14394806-cdff43b112af9cbb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/14394806-d5111951a1a350d9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>6.查询表达式<br><code>SELECT 100/1234;</code><br><img src="https://upload-images.jianshu.io/upload_images/14394806-d381426c3a6249ff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>7.起别名<br>  （1）使用<code>AS</code><br>  （2）空格</p>
+<blockquote>
+<p>起别名：①便于理解，②如果要查询的字段有重名的情况，使用别名可以区分</p>
+</blockquote>
+<p><img src="https://upload-images.jianshu.io/upload_images/14394806-8a1d2d7d0df2de43.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>8.去重<br><code>SELECT DISTINCT 字段名 FROM 表名;</code><br><img src="https://upload-images.jianshu.io/upload_images/14394806-3016cd22f8243a11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<ol start="9">
+<li>“+”的作用<br><code>SELECT 数值+数值;</code>直接运算<blockquote>
+<p>MySQL中的’+’只起到运算符的作用</p>
+</blockquote>
+</li>
+</ol>
+<p><img src="https://upload-images.jianshu.io/upload_images/14394806-b88f94d6fe645248.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>1.<code>SELECT 字段+数值</code>先视图将字符串转换成数值，如果转换成功，则继续运算，否则转换成0，再做运算。<br>不可以转成数值：<br><img src="https://upload-images.jianshu.io/upload_images/14394806-94e35fc48d3542ce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>可以转成数值：<br><img src="https://upload-images.jianshu.io/upload_images/14394806-f34698eda48017be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>2.<code>SELECT NULL + 值</code>结果都为NULL （只要其中一方为NULL，结果为NULL）<br><img src="https://upload-images.jianshu.io/upload_images/14394806-965e0efa847dd36e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h5 id="条件查询："><a href="#条件查询：" class="headerlink" title="条件查询："></a>条件查询：</h5><p><code>SELECT 查询列表 FROM 表名 WHERE 筛选条件;</code><br><img src="https://upload-images.jianshu.io/upload_images/14394806-49cbabcff6d2bd86.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<ul>
+<li><p>运算符：<br>1.简单条件运算符</p>
+<pre><code>&quot;&gt;&quot; , &lt; , = , &lt;&gt; , != , &gt;= , &lt;= , &lt;=&gt;</code></pre><blockquote>
+<p>其中’&lt;&gt;’符号为不等于，在SQL中”=”和”&lt;&gt;”不能用来判断NULL值。<br>“&lt;=&gt;”符号为安全等于，可以用来判断NULL值，也可以用来判断普通的数值，可读性比较低。</p>
+</blockquote>
+<p>2.逻辑运算符<br>  &amp;&amp; , and , || , or , ! , not</p>
+<h5 id="模糊查询："><a href="#模糊查询：" class="headerlink" title="模糊查询："></a>模糊查询：</h5></li>
+<li><p><code>LIKE</code>：一般搭配通配符使用，可以判断字符型或数值型。<br>通配符：”%”表示任意多个字符，包含0个字符，”_”任意单个字符。<br><img src="https://upload-images.jianshu.io/upload_images/14394806-07d55c064506e21f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+</li>
+<li><p><code>BETWEEN AND</code></p>
+<blockquote>
+<p>使用<code>BETWEEN AND</code>可以提高语句的简洁度，包含临界值，两个临界值不要调换顺序，<code>AND</code>两侧值的类型必须一致。</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/14394806-09ff40d3683fcb36.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/14394806-078c80f45b4b0168.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<ul>
+<li><code>IN</code><blockquote>
+<p>用来判断某字段的值是否属于in列表中的某一项。<br>使用IN可以提高语句的简洁度，IN列表的值的类型必须兼容或一致，IN不支持通配符。</p>
+</blockquote>
+</li>
+<li><code>IS NULL / IS NOT NULL</code> ：用于判断NULL值<blockquote>
+<p><code>IS NULL</code>与”&lt;=&gt;”比较：<br><code>IS NULL</code> 不能判断普通类型的数值，可以判断NULL值，可读性比较高，建议使用。<br>“&lt;=&gt;” 可以判断普通类型的数值，可以判断NULL值，可读性比较低。</p>
+</blockquote>
+<h5 id="排序查询："><a href="#排序查询：" class="headerlink" title="排序查询："></a>排序查询：</h5><code>SELECT 查询列表 FROM  表 【WHERE  筛选条件】 ORDER BY   排序列表 【ASC | DESC】;</code></li>
+</ul>
+<blockquote>
+<p>执行顺序：<code>FROM</code>  表 ——&gt; 【<code>WHERE</code>  筛选条件】 ——&gt; <code>SELECT</code> 查询列表 ——&gt;  <code>ORDER BY</code>   排序列表 【<code>ASC</code> | <code>DESC</code>】<br>[图片上传中…(image.png-330582-1584855657934-0)]</p>
+</blockquote>
+<blockquote>
+<p>ASC代表升序，DESC代表降序，默认升序<br>ORDER BY 子句中可以包含单个字段、多个字段、表达式、函数、别名<br>ORDER BY 子句一般是放在查询语句的最后面，<code>LIMIT</code>子句除外</p>
+</blockquote>
+<p><img src="https://upload-images.jianshu.io/upload_images/14394806-d370fef05f42eff6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+
+  
+
+
+              
+            </div>
           
         </div>
         
@@ -475,10 +576,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-12T15:10:58+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-13T10:30:23+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：May 12, 2020</p>
+    <p>更新于：May 13, 2020</p>
   </a>
 </div>
 
@@ -486,6 +587,9 @@
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/MySQL/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>MySQL</p></a></div>
+
 
         
       
@@ -502,7 +606,10 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/Hexo/index.html&title= - Arianna_blog&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/03/22/%E4%B8%80%E7%AF%87%E5%AD%A6%E4%BC%9AMySQL%E5%9F%BA%E7%A1%80%E8%AF%AD%E5%8F%A5/&title=一篇学会MySQL基础语句 - Arianna_blog&summary=MySQL是一个关系型数据库，查询的结果是一个虚拟的表格。
+
+关系型数据库，是指采用了关系模型来组织数据的数据库，其以行和列的形式存储数据，以便于用户理解，关系型数据库这一系列的行和列被称为表，一组表组成了数据库。 用户通过查询来检索数据库中的数据，而查询是一个用于限定数据库中某些区域的执行代码。
+"
           
           >
           
@@ -514,7 +621,10 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/Hexo/index.html&title= - Arianna_blog&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/03/22/%E4%B8%80%E7%AF%87%E5%AD%A6%E4%BC%9AMySQL%E5%9F%BA%E7%A1%80%E8%AF%AD%E5%8F%A5/&title=一篇学会MySQL基础语句 - Arianna_blog&summary=MySQL是一个关系型数据库，查询的结果是一个虚拟的表格。
+
+关系型数据库，是指采用了关系模型来组织数据的数据库，其以行和列的形式存储数据，以便于用户理解，关系型数据库这一系列的行和列被称为表，一组表组成了数据库。 用户通过查询来检索数据库中的数据，而查询是一个用于限定数据库中某些区域的执行代码。
+"
           
           >
           
@@ -526,7 +636,10 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/Hexo/index.html&title= - Arianna_blog&summary="
+          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/03/22/%E4%B8%80%E7%AF%87%E5%AD%A6%E4%BC%9AMySQL%E5%9F%BA%E7%A1%80%E8%AF%AD%E5%8F%A5/&title=一篇学会MySQL基础语句 - Arianna_blog&summary=MySQL是一个关系型数据库，查询的结果是一个虚拟的表格。
+
+关系型数据库，是指采用了关系模型来组织数据的数据库，其以行和列的形式存储数据，以便于用户理解，关系型数据库这一系列的行和列被称为表，一组表组成了数据库。 用户通过查询来检索数据库中的数据，而查询是一个用于限定数据库中某些区域的执行代码。
+"
           
           >
           
@@ -547,6 +660,28 @@
 
 
         
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2020/05/06/C++%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD%E5%AE%9E%E7%8E%B0(%E5%8A%A0%E5%8F%B7%E3%80%81%E5%B7%A6%E7%A7%BB%E3%80%81%E9%80%92%E5%A2%9E%E3%80%81%E8%B5%8B%E5%80%BC%E3%80%81%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6%E3%80%81%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8)/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>C++运算符重载实现(加号、左移、递增、赋值、关系运算符、函数调用)</p>
+                <p class='content'>先来复习一下C++的内存分区问题~
+
+C++内存分区C++程序的内存分区可划分为四大内存分区：堆、栈、全局/静态存储区和代码区。 不同类型的变量存放的区域不同。
+在程序被编译为exe可执行文件后...</p>
+              </a>
+            
+            
+              <a class='next' href='/2020/03/11/Python%E5%AE%9E%E7%8E%B0%E6%8E%92%E5%BA%8F%E5%8F%8A%E6%97%B6%E9%97%B4%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90/'>
+                <p class='title'>Python实现排序及时间空间复杂度分析<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>原文链接：https://www.jianshu.com/p/e398e4c3bb05
+一、冒泡排序（Bubble Sort）原理：
+
+
+比较相邻的元素。如果第一个比第二个大，就交换他们两个。（...</p>
+              </a>
+            
+          </div>
         
       </section>
     </article>
@@ -586,6 +721,13 @@
 
 
 
+  <script>
+    window.subData = {
+      title: '一篇学会MySQL基础语句',
+      tools: true
+    }
+  </script>
+
 
 </div>
 <aside class='l_side'>
@@ -596,6 +738,20 @@
     
     
 
+
+  <section class="widget toc-wrapper shadow floatable blur desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#语法："><span class="toc-text">语法：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#简单查询："><span class="toc-text">简单查询：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#条件查询："><span class="toc-text">条件查询：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#模糊查询："><span class="toc-text">模糊查询：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#排序查询："><span class="toc-text">排序查询：</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </section>
 
 
   
