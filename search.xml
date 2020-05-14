@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>解决Github访问慢的方法</title>
+      <link href="/2020/05/14/%E8%A7%A3%E5%86%B3Github%E8%AE%BF%E9%97%AE%E6%85%A2%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+      <url>/2020/05/14/%E8%A7%A3%E5%86%B3Github%E8%AE%BF%E9%97%AE%E6%85%A2%E7%9A%84%E6%96%B9%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h5 id="1-使用浏览器访问https-www-ipaddress-com-。"><a href="#1-使用浏览器访问https-www-ipaddress-com-。" class="headerlink" title="1.使用浏览器访问https://www.ipaddress.com/。"></a>1.使用浏览器访问<a href="https://www.ipaddress.com/" target="_blank" rel="noopener">https://www.ipaddress.com/</a>。</h5><p>在这个位置分别输入github.com和github.global.ssl.fastly.net<br><img src="https://upload-images.jianshu.io/upload_images/14394806-36d761d5513ec6d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><a id="more"></a><p><img src="https://upload-images.jianshu.io/upload_images/14394806-070f4147743ee349.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>搜索一下~<br>找到github.com对应的ip：<br><img src="https://upload-images.jianshu.io/upload_images/14394806-eeb980a96e5373c9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p>找到github.global.ssl.fastly.net对应的ip：<br><img src="https://upload-images.jianshu.io/upload_images/14394806-70602404d92dd8b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><p>每台电脑获取的ip应该不一样。<br>我获取的是<code>140.82.112.3</code>和<code>199.232.69.194</code>。</p><h5 id="2-Windows系统打开以下目录："><a href="#2-Windows系统打开以下目录：" class="headerlink" title="2.Windows系统打开以下目录："></a>2.Windows系统打开以下目录：</h5><p><code>C:\Windows\System32\drivers\etc</code><br>用记事本打开host文件，把以下内容添加进去：</p><blockquote><p>140.82.112.3   github.com<br>199.232.69.194 github.global.ssl.fastly.Net</p></blockquote><p><img src="https://upload-images.jianshu.io/upload_images/14394806-5b2bdd82a771b83b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>保存、关闭。</p><h5 id="3-打开cmd"><a href="#3-打开cmd" class="headerlink" title="3.打开cmd"></a>3.打开cmd</h5><p>用windows+R打开：<br><img src="https://upload-images.jianshu.io/upload_images/14394806-f637bf1de6d70eb1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>输入cmd，回车。<br>在小黑框里输入<code>ipconfig /flushdns</code>，更新DNS缓存。<br><img src="https://upload-images.jianshu.io/upload_images/14394806-0b6deefb12d74a16.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p><h5 id="4-再次访问Github"><a href="#4-再次访问Github" class="headerlink" title="4.再次访问Github"></a>4.再次访问Github</h5><p>快多啦！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Github </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Github </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Python+Django在线课堂项目（2）项目准备:App的模型创建</title>
       <link href="/2020/05/12/Python+Django%E5%9C%A8%E7%BA%BF%E8%AF%BE%E5%A0%82%E9%A1%B9%E7%9B%AE%EF%BC%882%EF%BC%89%E9%A1%B9%E7%9B%AE%E5%87%86%E5%A4%87_App%E7%9A%84%E6%A8%A1%E5%9E%8B%E5%88%9B%E5%BB%BA/"/>
       <url>/2020/05/12/Python+Django%E5%9C%A8%E7%BA%BF%E8%AF%BE%E5%A0%82%E9%A1%B9%E7%9B%AE%EF%BC%882%EF%BC%89%E9%A1%B9%E7%9B%AE%E5%87%86%E5%A4%87_App%E7%9A%84%E6%A8%A1%E5%9E%8B%E5%88%9B%E5%BB%BA/</url>
