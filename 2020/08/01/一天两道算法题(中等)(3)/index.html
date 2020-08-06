@@ -16,8 +16,12 @@
 
   <!-- 页面元数据 -->
   
-    <title>categories - Arianna_blog</title>
+    <title>一天两道算法题（中等）(2)(Leetcode 78 ) - Arianna_blog</title>
   
+    <meta name="keywords" content="Algorithm">
+  
+  
+    <meta name="description" content="78. 子集难度：中等">
   
 
   <!-- feed -->
@@ -485,20 +489,37 @@
   
 
   
-    <article id="page" class="post white-box reveal blur article-type-page" itemscope itemprop="blogPost">
+    <article id="post" class="post white-box reveal blur article-type-post" itemscope itemprop="blogPost">
       
 
 
   <section class='meta'>
     
       
+        
+
+  
+    <meting-js
+      mini='true'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      server='netease'
+      type='song'
+      id='16846091'>
+    </meting-js>
+  
+
+
+      
       
       <div class="meta" id="header-meta">
         
           
   <h1 class="title">
-    <a href="/categories/index.html">
-      categories
+    <a href="/2020/08/01/%E4%B8%80%E5%A4%A9%E4%B8%A4%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98(%E4%B8%AD%E7%AD%89)(3)/">
+      一天两道算法题（中等）(2)(Leetcode 78 )
     </a>
   </h1>
 
@@ -521,6 +542,14 @@
           
             
               
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/Algorithm/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>Algorithm</p>
+    </a>
+  </div>
+
 
             
           
@@ -528,7 +557,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：May 10, 2020</p>
+    <p>发布于：Aug 1, 2020</p>
   </a>
 </div>
 
@@ -551,7 +580,54 @@
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
           
+          <p><a href="https://leetcode-cn.com/problems/subsets/" target="_blank" rel="noopener">78. 子集</a><br>难度：中等</p>
+<a id="more"></a>
+<ul>
+<li>给定一组不含重复元素的整数数组 nums，返回该数组所有可能的子集（幂集）。<br>说明：解集不能包含重复的子集。</li>
+</ul>
+<p>示例:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">输入: nums &#x3D; [1,2,3]</span><br><span class="line">输出:</span><br><span class="line">[</span><br><span class="line">  [3],</span><br><span class="line">  [1],</span><br><span class="line">  [2],</span><br><span class="line">  [1,2,3],</span><br><span class="line">  [1,3],</span><br><span class="line">  [2,3],</span><br><span class="line">  [1,2],</span><br><span class="line">  []</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>初始化res数组作为返回的结果集，初始化为[[]]，也就是第一个返回的结果为空数组。</p>
+</li>
+<li><p>然后遍历整数数组nums，每遍历到一个值，就把res中所有的结果加上这个当前的数组值，然后把这些所有的可能加到res中</p>
+</li>
+<li><p>例如遍历到1，当前res中只有一个空数组，那么把空数组+[1]，作为一个结果append到res中，这时res为[[],[1]]</p>
+</li>
+<li><p>遍历到2，当前res为[[],[1]]，把res中的所有可能加上[2]，就得到[2],[1,2]，把这些结果加到res中，res变为[[],[1],[2],[1,2]]</p>
+</li>
+<li><p>代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def subsets(self, nums: List[int]) -&gt; List[List[int]]:</span><br><span class="line">        res &#x3D; [[]]</span><br><span class="line">        for i in nums:</span><br><span class="line">            # res[:]复制了一份副本</span><br><span class="line">            for subset in res[:]:</span><br><span class="line">                res.append(subset + [i])</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure></li>
+</ul>
+
           
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+
+  
+
+
+              
+            </div>
           
         </div>
         
@@ -562,10 +638,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-10T21:05:45+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-06T12:12:23+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：May 10, 2020</p>
+    <p>更新于：Aug 6, 2020</p>
   </a>
 </div>
 
@@ -573,6 +649,9 @@
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Algorithm/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Algorithm</p></a></div>
+
 
         
       
@@ -589,7 +668,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/categories/index.html&title=categories - Arianna_blog&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/08/01/%E4%B8%80%E5%A4%A9%E4%B8%A4%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98(%E4%B8%AD%E7%AD%89)(3)/&title=一天两道算法题（中等）(2)(Leetcode 78 ) - Arianna_blog&summary=78. 子集难度：中等"
           
           >
           
@@ -601,7 +680,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/categories/index.html&title=categories - Arianna_blog&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/08/01/%E4%B8%80%E5%A4%A9%E4%B8%A4%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98(%E4%B8%AD%E7%AD%89)(3)/&title=一天两道算法题（中等）(2)(Leetcode 78 ) - Arianna_blog&summary=78. 子集难度：中等"
           
           >
           
@@ -613,7 +692,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/categories/index.html&title=categories - Arianna_blog&summary="
+          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/08/01/%E4%B8%80%E5%A4%A9%E4%B8%A4%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98(%E4%B8%AD%E7%AD%89)(3)/&title=一天两道算法题（中等）(2)(Leetcode 78 ) - Arianna_blog&summary=78. 子集难度：中等"
           
           >
           
@@ -634,6 +713,30 @@
 
 
         
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2020/08/01/%E4%B8%80%E5%A4%A9%E4%B8%A4%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98(%E4%B8%AD%E7%AD%89)(1)/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>一天两道算法题(中等)(1)(Leetcode 39 40)</p>
+                <p class='content'>Backtracking(回溯算法)：三步：
+
+设置现场
+DFS（递归）
+回复现场（恢复现场）
+39. 组合总和
+
+给定一个无重复元素的数组 candidates 和一个目标数 target ，...</p>
+              </a>
+            
+            
+              <a class='next' href='/2020/06/01/Anki%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90/'>
+                <p class='title'>Anki2.1插件推荐<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>插件首页https://ankiweb.net/shared/addons/2.1
+
+插件1 ReviewHeatmap下载地址：https://ankiweb.net/shared/info/...</p>
+              </a>
+            
+          </div>
         
       </section>
     </article>
@@ -672,6 +775,13 @@
 <!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
 
 
+
+  <script>
+    window.subData = {
+      title: '一天两道算法题（中等）(2)(Leetcode 78 )',
+      tools: true
+    }
+  </script>
 
 
 </div>
