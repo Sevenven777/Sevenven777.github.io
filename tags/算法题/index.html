@@ -614,30 +614,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><a href="https://leetcode-cn.com/problems/combination-sum-iii/" target="_blank" rel="noopener">216. 组合总和 III</a><br>找出所有相加之和为 n 的 k 个数的组合。组合中只允许含有 1 - 9 的正整数，并且每种组合中不存在重复的数字。</p>
-<p>说明：</p>
-<ul>
-<li>所有数字都是正整数。</li>
-<li>解集不能包含重复的组合。</li>
-</ul>
-<p>示例 1:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: k &#x3D; 3, n &#x3D; 7</span><br><span class="line">输出: [[1,2,4]]</span><br></pre></td></tr></table></figure>
-<p>示例 2:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: k &#x3D; 3, n &#x3D; 9</span><br><span class="line">输出: [[1,2,6], [1,3,5], [2,3,4]]</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>这道题和组合总和1、2差不多，只不过不再遍历数组，而是一个数字范围。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def combinationSum3(self, k: int, n: int) -&gt; List[List[int]]:</span><br><span class="line">        if k &#x3D;&#x3D; 0:</span><br><span class="line">            return []</span><br><span class="line">        return self.helper(1, [], [], k, n)</span><br><span class="line">    </span><br><span class="line">    def helper(self, num, tmp, res, k, n):</span><br><span class="line">        if k &#x3D;&#x3D; 0 and n &#x3D;&#x3D; 0:</span><br><span class="line">            res.append(copy.deepcopy(tmp))</span><br><span class="line">            return res</span><br><span class="line"></span><br><span class="line">        for i in range(num, 10):</span><br><span class="line">            if i &lt;&#x3D; n:</span><br><span class="line">                tmp.append(i)</span><br><span class="line">                self.helper(i+1, tmp, res, k-1, n - i)</span><br><span class="line">                tmp.pop()</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://leetcode-cn.com/problems/combinations/" target="_blank" rel="noopener">77. 组合</a><br>给定两个整数 n 和 k，返回 1 … n 中所有可能的 k 个数的组合。<br>示例:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">输入: n &#x3D; 4, k &#x3D; 2</span><br><span class="line">输出:</span><br><span class="line">[</span><br><span class="line">  [2,4],</span><br><span class="line">  [3,4],</span><br><span class="line">  [2,3],</span><br><span class="line">  [1,2],</span><br><span class="line">  [1,3],</span><br><span class="line">  [1,4],</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<ul>
-<li>相同思路<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def combine(self, n: int, k: int) -&gt; List[List[int]]:</span><br><span class="line">        if k &#x3D;&#x3D; 0:</span><br><span class="line">            return []</span><br><span class="line">        return self.helper(k, [], [], n, 1)</span><br><span class="line">    </span><br><span class="line">    def helper(self, k, tmp, res, n, i):</span><br><span class="line">        if len(tmp) &#x3D;&#x3D; k:</span><br><span class="line">            res.append(copy.deepcopy(tmp))</span><br><span class="line">            return res</span><br><span class="line">        for i in range(i, n+1):</span><br><span class="line">            if i &lt;&#x3D; n:</span><br><span class="line">                tmp.append(i)</span><br><span class="line">                self.helper(k, tmp, res, n, i+1)</span><br><span class="line">                tmp.pop()</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure></li>
-</ul>
-
       
     </div>
     
+      
+        <div class="button readmore">
+          <a href="/2020/08/04/%E4%B8%80%E5%A4%A9%E4%B8%A4%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98(%E4%B8%AD%E7%AD%89)(2)/">
+            Read More <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
       
     
   </section>
