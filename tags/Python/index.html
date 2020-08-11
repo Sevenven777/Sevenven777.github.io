@@ -174,6 +174,38 @@
                       
             
               <li>
+                <a class="flat-box" href=/categories/data-structure/
+                  
+                  
+                  
+                    id="categoriesdata-structure"
+                  >
+                  <i class='far fa-bookmark fa-fw'></i>data-structure
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/categories/Python/
+                  
+                  
+                  
+                    id="categoriesPython"
+                  >
+                  <i class='far fa-bookmark fa-fw'></i>Python
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
                 <a class="flat-box" href=/categories/Hexo/
                   
                   
@@ -377,6 +409,38 @@
                       
             
               <li>
+                <a class="flat-box" href=/categories/data-structure/
+                  
+                  
+                  
+                    id="categoriesdata-structure"
+                  >
+                  <i class='far fa-bookmark fa-fw'></i>data-structure
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="flat-box" href=/categories/Python/
+                  
+                  
+                  
+                    id="categoriesPython"
+                  >
+                  <i class='far fa-bookmark fa-fw'></i>Python
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
                 <a class="flat-box" href=/categories/Hexo/
                   
                   
@@ -494,9 +558,204 @@
         
           
         
+          
+        
       
     
     
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box blur reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2020/08/11/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAPython%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%B5%85%E6%8B%B7%E8%B4%9D/">
+      深入浅出Python深拷贝浅拷贝
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="https://sevenven777.github.io/" target="_blank" rel="nofollow noopener">
+    <img src="https://i.loli.net/2020/05/09/594pXz6CViWuAy3.jpg">
+    <p>Arianna Watson</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/Python/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>Python</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Aug 11, 2020</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>1.8k words</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>8 min</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>所谓拷贝，就是复制。</p>
+<p>深拷贝，就是复制的比较多，浅拷贝，就是复制的比较少。</p>
+<p>在Python中，copy.copy可以完成浅拷贝，copy.deepcopy可以完成深拷贝。</p>
+<h4 id="举例-图解"><a href="#举例-图解" class="headerlink" title="举例 图解"></a>举例 图解</h4><h5 id="1-赋值"><a href="#1-赋值" class="headerlink" title="1.赋值"></a>1.赋值</h5><p>如果 a = [11,22]， 把a赋给b：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">In [1]: a &#x3D; [11, 22]</span><br><span class="line">In [2]: b &#x3D; a</span><br><span class="line"></span><br><span class="line">In [3]: a</span><br><span class="line">Out[3]: [11, 22]</span><br><span class="line"></span><br><span class="line">In [4]: b</span><br><span class="line">Out[4]: [11, 22]</span><br></pre></td></tr></table></figure>
+<p>从结果来看是看不出来a和b是否是同一个，我们用id()函数查看一下a和b的id：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">In [5]: id(a)</span><br><span class="line">Out[5]: 2293026594376</span><br><span class="line"></span><br><span class="line">In [6]: id(b)</span><br><span class="line">Out[6]: 2293026594376</span><br></pre></td></tr></table></figure>
+<p>a 和 b的id相同，说明他们指向了同一块区域，这里说指向，是因为在Python中，实际上是有一个空间存储了[11, 22]，在给a赋值的时候，变量名a就指向了[11,22]的空间，当把a赋给b的时候，实际上是让b也指向[11,22]。</p>
+<p>画图来说明是这样的：</p>
+<p><img src="https://i.loli.net/2020/08/11/KVH6Qm7kb5go1C3.png" alt="image.png"></p>
+<h5 id="2-浅拷贝"><a href="#2-浅拷贝" class="headerlink" title="2.浅拷贝"></a>2.浅拷贝</h5><p>在python中，copy.copy()可以用来浅拷贝，copy.deepcopy()可以用来深拷贝。</p>
+<p>重新定义了a，b，然后把a和b作为一个列表赋给c。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">In [11]: a &#x3D; [11,22]</span><br><span class="line"></span><br><span class="line">In [12]: b &#x3D; [33,44]</span><br><span class="line"></span><br><span class="line">In [13]: c &#x3D; [a, b]</span><br></pre></td></tr></table></figure>
+<p>这时候相当于：<br><img src="https://i.loli.net/2020/08/11/VLTkwK2ltmAigZu.png" alt="image.png"><br>验证一下：</p>
+<p>如果a与c[0]的id相同，就说明他们指向的是相同的区域。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">In [14]: id(a)</span><br><span class="line">Out[14]: 2293027197896</span><br><span class="line"></span><br><span class="line">In [15]: id(c[0])</span><br><span class="line">Out[15]: 2293027197896</span><br></pre></td></tr></table></figure>
+<p>如果现在把c赋给d：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">In [16]: d &#x3D; c</span><br></pre></td></tr></table></figure>
+<p>这相当于：<br><img src="https://upload-images.jianshu.io/upload_images/14394806-6a0f58d19d02459f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>验证一下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">In [17]: id(d)</span><br><span class="line">Out[17]: 2293026531656</span><br><span class="line"></span><br><span class="line">In [18]: id(c)</span><br><span class="line">Out[18]: 2293026531656</span><br></pre></td></tr></table></figure>
+<p>如果这时候把c浅拷贝给e：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">In [19]: import copy</span><br><span class="line"></span><br><span class="line">In [20]: e &#x3D; copy.copy(c)</span><br></pre></td></tr></table></figure>
+<p>这时候，e会指向一块新开辟的区域。<br><img src="https://i.loli.net/2020/08/11/swI8DXcyP32hoFC.png" alt="image.png"></p>
+<p>因为是浅拷贝，所以e的这块区域也会指向c的区域的指向，也就是这样：</p>
+<p><img src="https://i.loli.net/2020/08/11/sc52XwHd7I6epAq.png" alt="image.png"></p>
+<p>验证：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">In [21]: id(e)</span><br><span class="line">Out[21]: 2293027309192</span><br><span class="line"></span><br><span class="line">In [22]: id(c)</span><br><span class="line">Out[22]: 2293026531656</span><br><span class="line"></span><br><span class="line">In [23]: id(e[0])</span><br><span class="line">Out[23]: 2293027197896</span><br><span class="line"></span><br><span class="line">In [24]: id(c[0])</span><br><span class="line">Out[24]: 2293027197896</span><br></pre></td></tr></table></figure>
+<p>e和c的地址不同，说明e和c指向的区域不一样，e[0]和c[0]的id相同，说明他们指向了同一块空间。</p>
+<p>这就是浅拷贝，它只拷贝了第一层，第二层以下的数据并没有真的“拷贝”出来。</p>
+<p>当前的a，b和c，e：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">In [25]: a</span><br><span class="line">Out[25]: [11, 22]</span><br><span class="line"></span><br><span class="line">In [26]: b</span><br><span class="line">Out[26]: [33, 44]</span><br><span class="line"></span><br><span class="line">In [27]: c</span><br><span class="line">Out[27]: [[11, 22], [33, 44]]</span><br><span class="line"></span><br><span class="line">In [28]: e</span><br><span class="line">Out[28]: [[11, 22], [33, 44]]</span><br></pre></td></tr></table></figure>
+<p>因为是浅拷贝，所以如果a修改了，e也会修改。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">In [30]: a</span><br><span class="line">Out[30]: [11, 22, &#39;hahaha&#39;]</span><br><span class="line"></span><br><span class="line">In [31]: c</span><br><span class="line">Out[31]: [[11, 22, &#39;hahaha&#39;], [33, 44]]</span><br><span class="line"></span><br><span class="line">In [32]: e</span><br><span class="line">Out[32]: [[11, 22, &#39;hahaha&#39;], [33, 44]]</span><br></pre></td></tr></table></figure>
+<p>a = [11,22] c = [a,b]，再来看看深拷贝。</p>
+<h5 id="3-深拷贝"><a href="#3-深拷贝" class="headerlink" title="3.深拷贝"></a>3.深拷贝</h5><p>如果是深拷贝，就原原本本的把所有层的数据都拷贝一份新的，指向也指向这份新的数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">In [44]: f &#x3D; copy.deepcopy(c)</span><br><span class="line"></span><br><span class="line">In [45]: c</span><br><span class="line">Out[45]: [[11, 22], [33, 44]]</span><br><span class="line"></span><br><span class="line">In [46]: f</span><br><span class="line">Out[46]: [[11, 22], [33, 44]]</span><br></pre></td></tr></table></figure>
+<p>这时候的指向是这样的：<br><a href="https://sm.ms/image/aq8tfyV3WoB7Cip" target="_blank"><img src="https://i.loli.net/2020/08/11/aq8tfyV3WoB7Cip.png" ></a></p>
+<p>验证：<br>如果c和f，c[0]和f[0]的地址不同，说明是这样的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">In [47]: id(c)</span><br><span class="line">Out[47]: 2293026784840</span><br><span class="line"></span><br><span class="line">In [48]: id(f)</span><br><span class="line">Out[48]: 2293027611400</span><br><span class="line"></span><br><span class="line">In [49]: id(c[0])</span><br><span class="line">Out[49]: 2293027354312</span><br><span class="line"></span><br><span class="line">In [50]: id(f[0])</span><br><span class="line">Out[50]: 2293027035208</span><br></pre></td></tr></table></figure>
+<h4 id="4-总结"><a href="#4-总结" class="headerlink" title="4.总结"></a>4.总结</h4><p>所以不管是copy还是deepcopy，都会先创建一份新的空间，而直接赋值<code>b=a</code>则不会。</p>
+<h4 id="几个问题"><a href="#几个问题" class="headerlink" title="几个问题"></a>几个问题</h4><h5 id="1-问题1"><a href="#1-问题1" class="headerlink" title="1.问题1"></a>1.问题1</h5><p>前提如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">In [53]: a &#x3D; [11,22]</span><br><span class="line"></span><br><span class="line">In [54]: b &#x3D; [33,44]</span><br><span class="line"></span><br><span class="line">In [55]: c &#x3D; [a, b]</span><br><span class="line"></span><br><span class="line">In [56]: d &#x3D; copy.copy(c)</span><br><span class="line"></span><br><span class="line">In [57]: e &#x3D; copy.deepcopy(c)</span><br></pre></td></tr></table></figure>
+<p><strong>如果这时候在c中append一个新的列表[55,66]d和e会如何变化？</strong></p>
+<p>查看结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">In [58]: c.append([55,66])</span><br><span class="line"></span><br><span class="line">In [59]: d</span><br><span class="line">Out[59]: [[11, 22], [33, 44]]</span><br><span class="line"></span><br><span class="line">In [60]: e</span><br><span class="line">Out[60]: [[11, 22], [33, 44]]</span><br></pre></td></tr></table></figure>
+<p>原因图解如下：<br>一开始的指向是这样的：<br><a href="https://sm.ms/image/XPSYtxybcGADia6" target="_blank"><img src="https://i.loli.net/2020/08/11/XPSYtxybcGADia6.png" ></a></p>
+<p>或者把d放在上面更直观一些：<br><a href="https://sm.ms/image/tFH4j6XQc51TVE8" target="_blank"><img src="https://i.loli.net/2020/08/11/tFH4j6XQc51TVE8.png" ></a></p>
+<p>这时候在c中添加新的列表：<br><a href="https://sm.ms/image/cylOhQb23KSqfXv" target="_blank"><img src="https://i.loli.net/2020/08/11/cylOhQb23KSqfXv.png" ></a></p>
+<p>实际上的这个添加和d和e是没有任何关系的，所以才会有这样的结果，因为d已经拷贝完了，拷贝完之后才添加的，所以d中不会有[55,66]。</p>
+<h5 id="问题2"><a href="#问题2" class="headerlink" title="问题2"></a>问题2</h5><p>前提：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">In [70]: a &#x3D; (11,22)</span><br><span class="line"></span><br><span class="line">In [71]:  b &#x3D; copy.copy(a)</span><br></pre></td></tr></table></figure>
+<p>把a浅拷贝给b，这时候a是一个元组。</p>
+<p>来查看a和b的id：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">In [73]: id(a)</span><br><span class="line">Out[73]: 2293027979080</span><br><span class="line"></span><br><span class="line">In [74]: id(b)</span><br><span class="line">Out[74]: 2293027979080</span><br></pre></td></tr></table></figure>
+<p>发现他们的地址是一样的。</p>
+<p>所以如果浅拷贝发现拷贝对象是一个元组，就直接不拷贝了，变为了指向。</p>
+<p>因为元组是不可变类型，数据不会被修改。</p>
+<p>如果是深拷贝：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">In [75]: c &#x3D; copy.deepcopy(a)</span><br></pre></td></tr></table></figure>
+
+<p>这时候查看c的id和a的id：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">In [76]: id(c)</span><br><span class="line">Out[76]: 2293027979080</span><br><span class="line"></span><br><span class="line">In [77]: id(a)</span><br><span class="line">Out[77]: 2293027979080</span><br></pre></td></tr></table></figure>
+<p>他们的地址相同，说明深拷贝也没有拷贝。</p>
+<p>再看一种情况：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">In [79]: a &#x3D; [11,22]</span><br><span class="line"></span><br><span class="line">In [80]: b &#x3D; [33,44]</span><br><span class="line"></span><br><span class="line">In [81]: c &#x3D; (a,b)</span><br><span class="line"></span><br><span class="line">In [82]: d &#x3D; copy.copy(c)</span><br><span class="line"></span><br><span class="line">In [83]: e &#x3D; copy.deepcopy(c)</span><br></pre></td></tr></table></figure>
+<p>此时a和b都是可变的列表，c是不可变的元组，d有了c的浅拷贝，e有了d的深拷贝。</p>
+<p>这时候d和e有没有拷贝c？</p>
+<p>来查看一下id：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">In [84]: id(c)</span><br><span class="line">Out[84]: 2293028072520</span><br><span class="line"></span><br><span class="line">In [85]: id(d)</span><br><span class="line">Out[85]: 2293028072520</span><br><span class="line"></span><br><span class="line">In [86]: id(e)</span><br><span class="line">Out[86]: 2293027609416</span><br></pre></td></tr></table></figure>
+<p>说明浅拷贝还是没有拷贝，还是指向，但深拷贝拷贝了。<br>所以：</p>
+<ul>
+<li>如果拷贝的是一个元组（第一层是元组），而且元组中都是不可变对象，那么copy模块不管是深拷贝还是浅拷贝都变为了指向（引用）。</li>
+<li>如果拷贝的是一个元组（第一层是元组），不管元组中的对象可变还是不可变，浅拷贝都直接指向，而不开辟新的空间了。</li>
+<li>如果拷贝的是一个元组（第一层是元组），元组中有可变对象，那么深拷贝还是会开辟新的空间，把每一层的数据都拷贝了。</li>
+<li>所以当深拷贝的时候，如果每一层的元素都是不可变对象，那深拷贝也不拷贝了，变为了指向，但是不管哪一层的数据，只要有一个是可变对象，那么深拷贝就会递归的把所有的数据都拷贝一份。<h5 id="问题3"><a href="#问题3" class="headerlink" title="问题3"></a>问题3</h5>切片是浅拷贝。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">In [88]: a &#x3D; [11,22]</span><br><span class="line"></span><br><span class="line">In [89]: b &#x3D; [33,44]</span><br><span class="line"></span><br><span class="line">In [90]: c &#x3D; [a,b]</span><br><span class="line"></span><br><span class="line">In [91]: d &#x3D; c[:]</span><br><span class="line"></span><br><span class="line">In [92]: id(c)</span><br><span class="line">Out[92]: 2293027355592</span><br><span class="line"></span><br><span class="line">In [93]: id(d)</span><br><span class="line">Out[93]: 2293026561416</span><br><span class="line"></span><br><span class="line">In [94]: a.append(&quot;lalala&quot;)</span><br><span class="line"></span><br><span class="line">In [95]: a</span><br><span class="line">Out[95]: [11, 22, &#39;lalala&#39;]</span><br><span class="line"></span><br><span class="line">In [96]: c</span><br><span class="line">Out[96]: [[11, 22, &#39;lalala&#39;], [33, 44]]</span><br><span class="line"></span><br><span class="line">In [97]: d</span><br><span class="line">Out[97]: [[11, 22, &#39;lalala&#39;], [33, 44]]</span><br></pre></td></tr></table></figure>
+<h5 id="问题4"><a href="#问题4" class="headerlink" title="问题4"></a>问题4</h5>字典中的拷贝。<br>字典有一个copy方法，用法如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dict.copy()</span><br></pre></td></tr></table></figure>
+这个拷贝是一个浅拷贝。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">In [100]: first &#x3D; &#123;&quot;a&quot;:[1,2],&quot;b&quot;:33&#125;</span><br><span class="line"></span><br><span class="line">In [101]: second &#x3D; first.copy()</span><br></pre></td></tr></table></figure>
+查看一下两个字典：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">In [102]: first</span><br><span class="line">Out[102]: &#123;&#39;a&#39;: [1, 2], &#39;b&#39;: 33&#125;</span><br><span class="line"></span><br><span class="line">In [103]: second</span><br><span class="line">Out[103]: &#123;&#39;a&#39;: [1, 2], &#39;b&#39;: 33&#125;</span><br></pre></td></tr></table></figure>
+如果这时候[11,22]列表中添加一个新的值3，再查看一下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">In [104]: first[&#39;a&#39;].append(3)</span><br><span class="line"></span><br><span class="line">In [105]: first</span><br><span class="line">Out[105]: &#123;&#39;a&#39;: [1, 2, 3], &#39;b&#39;: 33&#125;</span><br><span class="line"></span><br><span class="line">In [106]: second</span><br><span class="line">Out[106]: &#123;&#39;a&#39;: [1, 2, 3], &#39;b&#39;: 33&#125;</span><br></pre></td></tr></table></figure>
+说明是浅拷贝。</li>
+</ul>
+<p>补充说明：</p>
+<p>字典的key是保存在字典里的，value才是指向。<br><a href="https://sm.ms/image/mAhrMaG8g54ipv2" target="_blank"><img src="https://i.loli.net/2020/08/11/mAhrMaG8g54ipv2.png" ></a></p>
+<h3 id="补充说明："><a href="#补充说明：" class="headerlink" title="补充说明："></a>补充说明：</h3><p>在python中，像11这样的值的类型的数据在只会创建一个，所以如果a=[11,22],b=[11,22]，实际指向是这样的：<br><a href="https://sm.ms/image/ReXWoJVfcaHl6v5" target="_blank"><img src="https://i.loli.net/2020/08/11/ReXWoJVfcaHl6v5.png" ></a></p>
+<p>所以图解的部分画的图并不准确，可以重新看一下~</p>
+<p>补充部分可以参考：<br><a href="https://www.cnblogs.com/shiyublog/p/10809953.html#_label3" target="_blank" rel="noopener">https://www.cnblogs.com/shiyublog/p/10809953.html#_label3</a></p>
+
+      
+    </div>
+    
+      
+    
+  </section>
+</article>
+
+          </div>
+        
       
         
           <div class='post-wrapper'>
@@ -729,6 +988,11 @@
             id="categoriesOthers"
             ><div class='name'>Others</div><div class='badge'>(1)</div></a></li>
         
+          <li><a class="flat-box"
+            title="/categories/Python/" href="/categories/Python/"
+            id="categoriesPython"
+            ><div class='name'>Python</div><div class='badge'>(1)</div></a></li>
+        
       </ul>
     </div>
   </section>
@@ -751,7 +1015,7 @@
 
 
     <div class='content'>
-      <a href="/tags/Anki/" style="font-size: 14px; color: #999">Anki</a> <a href="/tags/C/" style="font-size: 14px; color: #999">C++</a> <a href="/tags/Github/" style="font-size: 14px; color: #999">Github</a> <a href="/tags/Python/" style="font-size: 14px; color: #999">Python</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 14px; color: #999">排序</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 24px; color: #555">算法</a>
+      <a href="/tags/Anki/" style="font-size: 14px; color: #999">Anki</a> <a href="/tags/C/" style="font-size: 14px; color: #999">C++</a> <a href="/tags/Github/" style="font-size: 14px; color: #999">Github</a> <a href="/tags/Python/" style="font-size: 19px; color: #777">Python</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 14px; color: #999">排序</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 24px; color: #555">算法</a>
     </div>
   </section>
 
@@ -840,7 +1104,7 @@
             type: 'heatmap',
             coordinateSystem: 'calendar',
             calendarIndex: 0,
-            data: [["2019-08-11", 0], ["2019-08-12", 0], ["2019-08-13", 0], ["2019-08-14", 0], ["2019-08-15", 0], ["2019-08-16", 0], ["2019-08-17", 0], ["2019-08-18", 0], ["2019-08-19", 0], ["2019-08-20", 0], ["2019-08-21", 0], ["2019-08-22", 0], ["2019-08-23", 0], ["2019-08-24", 0], ["2019-08-25", 0], ["2019-08-26", 0], ["2019-08-27", 0], ["2019-08-28", 0], ["2019-08-29", 0], ["2019-08-30", 0], ["2019-08-31", 0], ["2019-09-01", 0], ["2019-09-02", 0], ["2019-09-03", 0], ["2019-09-04", 0], ["2019-09-05", 0], ["2019-09-06", 0], ["2019-09-07", 0], ["2019-09-08", 0], ["2019-09-09", 0], ["2019-09-10", 0], ["2019-09-11", 0], ["2019-09-12", 0], ["2019-09-13", 0], ["2019-09-14", 0], ["2019-09-15", 0], ["2019-09-16", 0], ["2019-09-17", 0], ["2019-09-18", 0], ["2019-09-19", 0], ["2019-09-20", 0], ["2019-09-21", 0], ["2019-09-22", 0], ["2019-09-23", 0], ["2019-09-24", 0], ["2019-09-25", 0], ["2019-09-26", 0], ["2019-09-27", 0], ["2019-09-28", 0], ["2019-09-29", 0], ["2019-09-30", 0], ["2019-10-01", 0], ["2019-10-02", 0], ["2019-10-03", 0], ["2019-10-04", 0], ["2019-10-05", 0], ["2019-10-06", 0], ["2019-10-07", 0], ["2019-10-08", 0], ["2019-10-09", 0], ["2019-10-10", 0], ["2019-10-11", 0], ["2019-10-12", 0], ["2019-10-13", 0], ["2019-10-14", 0], ["2019-10-15", 0], ["2019-10-16", 0], ["2019-10-17", 0], ["2019-10-18", 0], ["2019-10-19", 0], ["2019-10-20", 0], ["2019-10-21", 0], ["2019-10-22", 0], ["2019-10-23", 0], ["2019-10-24", 0], ["2019-10-25", 0], ["2019-10-26", 0], ["2019-10-27", 0], ["2019-10-28", 0], ["2019-10-29", 0], ["2019-10-30", 0], ["2019-10-31", 0], ["2019-11-01", 0], ["2019-11-02", 0], ["2019-11-03", 0], ["2019-11-04", 0], ["2019-11-05", 0], ["2019-11-06", 0], ["2019-11-07", 0], ["2019-11-08", 0], ["2019-11-09", 0], ["2019-11-10", 0], ["2019-11-11", 0], ["2019-11-12", 0], ["2019-11-13", 0], ["2019-11-14", 0], ["2019-11-15", 0], ["2019-11-16", 0], ["2019-11-17", 0], ["2019-11-18", 0], ["2019-11-19", 0], ["2019-11-20", 0], ["2019-11-21", 0], ["2019-11-22", 0], ["2019-11-23", 0], ["2019-11-24", 0], ["2019-11-25", 0], ["2019-11-26", 0], ["2019-11-27", 0], ["2019-11-28", 0], ["2019-11-29", 0], ["2019-11-30", 0], ["2019-12-01", 0], ["2019-12-02", 0], ["2019-12-03", 0], ["2019-12-04", 0], ["2019-12-05", 0], ["2019-12-06", 0], ["2019-12-07", 0], ["2019-12-08", 0], ["2019-12-09", 0], ["2019-12-10", 0], ["2019-12-11", 0], ["2019-12-12", 0], ["2019-12-13", 0], ["2019-12-14", 0], ["2019-12-15", 0], ["2019-12-16", 0], ["2019-12-17", 0], ["2019-12-18", 0], ["2019-12-19", 0], ["2019-12-20", 0], ["2019-12-21", 0], ["2019-12-22", 0], ["2019-12-23", 0], ["2019-12-24", 0], ["2019-12-25", 0], ["2019-12-26", 0], ["2019-12-27", 0], ["2019-12-28", 0], ["2019-12-29", 0], ["2019-12-30", 0], ["2019-12-31", 0], ["2020-01-01", 0], ["2020-01-02", 0], ["2020-01-03", 0], ["2020-01-04", 0], ["2020-01-05", 0], ["2020-01-06", 0], ["2020-01-07", 0], ["2020-01-08", 0], ["2020-01-09", 0], ["2020-01-10", 0], ["2020-01-11", 0], ["2020-01-12", 0], ["2020-01-13", 0], ["2020-01-14", 0], ["2020-01-15", 0], ["2020-01-16", 0], ["2020-01-17", 0], ["2020-01-18", 0], ["2020-01-19", 0], ["2020-01-20", 0], ["2020-01-21", 0], ["2020-01-22", 0], ["2020-01-23", 0], ["2020-01-24", 0], ["2020-01-25", 0], ["2020-01-26", 0], ["2020-01-27", 0], ["2020-01-28", 0], ["2020-01-29", 0], ["2020-01-30", 0], ["2020-01-31", 0], ["2020-02-01", 0], ["2020-02-02", 0], ["2020-02-03", 0], ["2020-02-04", 0], ["2020-02-05", 0], ["2020-02-06", 0], ["2020-02-07", 0], ["2020-02-08", 0], ["2020-02-09", 0], ["2020-02-10", 0], ["2020-02-11", 0], ["2020-02-12", 0], ["2020-02-13", 0], ["2020-02-14", 0], ["2020-02-15", 0], ["2020-02-16", 0], ["2020-02-17", 0], ["2020-02-18", 0], ["2020-02-19", 0], ["2020-02-20", 0], ["2020-02-21", 0], ["2020-02-22", 0], ["2020-02-23", 0], ["2020-02-24", 0], ["2020-02-25", 0], ["2020-02-26", 0], ["2020-02-27", 0], ["2020-02-28", 0], ["2020-02-29", 0], ["2020-03-01", 0], ["2020-03-02", 0], ["2020-03-03", 0], ["2020-03-04", 0], ["2020-03-05", 0], ["2020-03-06", 0], ["2020-03-07", 0], ["2020-03-08", 0], ["2020-03-09", 0], ["2020-03-10", 0], ["2020-03-11", 1], ["2020-03-12", 0], ["2020-03-13", 0], ["2020-03-14", 0], ["2020-03-15", 0], ["2020-03-16", 0], ["2020-03-17", 0], ["2020-03-18", 0], ["2020-03-19", 0], ["2020-03-20", 0], ["2020-03-21", 0], ["2020-03-22", 0], ["2020-03-23", 0], ["2020-03-24", 0], ["2020-03-25", 0], ["2020-03-26", 0], ["2020-03-27", 0], ["2020-03-28", 0], ["2020-03-29", 0], ["2020-03-30", 0], ["2020-03-31", 0], ["2020-04-01", 0], ["2020-04-02", 0], ["2020-04-03", 0], ["2020-04-04", 0], ["2020-04-05", 0], ["2020-04-06", 0], ["2020-04-07", 0], ["2020-04-08", 0], ["2020-04-09", 0], ["2020-04-10", 0], ["2020-04-11", 0], ["2020-04-12", 0], ["2020-04-13", 0], ["2020-04-14", 0], ["2020-04-15", 0], ["2020-04-16", 0], ["2020-04-17", 0], ["2020-04-18", 0], ["2020-04-19", 0], ["2020-04-20", 0], ["2020-04-21", 0], ["2020-04-22", 0], ["2020-04-23", 0], ["2020-04-24", 0], ["2020-04-25", 0], ["2020-04-26", 0], ["2020-04-27", 0], ["2020-04-28", 0], ["2020-04-29", 0], ["2020-04-30", 0], ["2020-05-01", 0], ["2020-05-02", 0], ["2020-05-03", 0], ["2020-05-04", 0], ["2020-05-05", 0], ["2020-05-06", 1], ["2020-05-07", 0], ["2020-05-08", 0], ["2020-05-09", 1], ["2020-05-10", 0], ["2020-05-11", 0], ["2020-05-12", 0], ["2020-05-13", 0], ["2020-05-14", 1], ["2020-05-15", 0], ["2020-05-16", 0], ["2020-05-17", 0], ["2020-05-18", 0], ["2020-05-19", 0], ["2020-05-20", 0], ["2020-05-21", 0], ["2020-05-22", 0], ["2020-05-23", 0], ["2020-05-24", 0], ["2020-05-25", 0], ["2020-05-26", 0], ["2020-05-27", 0], ["2020-05-28", 0], ["2020-05-29", 0], ["2020-05-30", 0], ["2020-05-31", 0], ["2020-06-01", 1], ["2020-06-02", 0], ["2020-06-03", 0], ["2020-06-04", 0], ["2020-06-05", 0], ["2020-06-06", 0], ["2020-06-07", 0], ["2020-06-08", 0], ["2020-06-09", 0], ["2020-06-10", 0], ["2020-06-11", 0], ["2020-06-12", 0], ["2020-06-13", 0], ["2020-06-14", 0], ["2020-06-15", 0], ["2020-06-16", 0], ["2020-06-17", 0], ["2020-06-18", 0], ["2020-06-19", 0], ["2020-06-20", 0], ["2020-06-21", 0], ["2020-06-22", 0], ["2020-06-23", 0], ["2020-06-24", 0], ["2020-06-25", 0], ["2020-06-26", 0], ["2020-06-27", 0], ["2020-06-28", 0], ["2020-06-29", 0], ["2020-06-30", 0], ["2020-07-01", 0], ["2020-07-02", 0], ["2020-07-03", 0], ["2020-07-04", 0], ["2020-07-05", 0], ["2020-07-06", 0], ["2020-07-07", 0], ["2020-07-08", 0], ["2020-07-09", 0], ["2020-07-10", 0], ["2020-07-11", 0], ["2020-07-12", 0], ["2020-07-13", 0], ["2020-07-14", 0], ["2020-07-15", 0], ["2020-07-16", 0], ["2020-07-17", 0], ["2020-07-18", 0], ["2020-07-19", 0], ["2020-07-20", 0], ["2020-07-21", 0], ["2020-07-22", 0], ["2020-07-23", 0], ["2020-07-24", 0], ["2020-07-25", 0], ["2020-07-26", 0], ["2020-07-27", 0], ["2020-07-28", 0], ["2020-07-29", 0], ["2020-07-30", 0], ["2020-07-31", 0], ["2020-08-01", 1], ["2020-08-02", 1], ["2020-08-03", 1], ["2020-08-04", 1], ["2020-08-05", 1], ["2020-08-06", 1], ["2020-08-07", 0], ["2020-08-08", 0], ["2020-08-09", 0], ["2020-08-10", 0], ["2020-08-11", 0]]
+            data: [["2019-08-11", 0], ["2019-08-12", 0], ["2019-08-13", 0], ["2019-08-14", 0], ["2019-08-15", 0], ["2019-08-16", 0], ["2019-08-17", 0], ["2019-08-18", 0], ["2019-08-19", 0], ["2019-08-20", 0], ["2019-08-21", 0], ["2019-08-22", 0], ["2019-08-23", 0], ["2019-08-24", 0], ["2019-08-25", 0], ["2019-08-26", 0], ["2019-08-27", 0], ["2019-08-28", 0], ["2019-08-29", 0], ["2019-08-30", 0], ["2019-08-31", 0], ["2019-09-01", 0], ["2019-09-02", 0], ["2019-09-03", 0], ["2019-09-04", 0], ["2019-09-05", 0], ["2019-09-06", 0], ["2019-09-07", 0], ["2019-09-08", 0], ["2019-09-09", 0], ["2019-09-10", 0], ["2019-09-11", 0], ["2019-09-12", 0], ["2019-09-13", 0], ["2019-09-14", 0], ["2019-09-15", 0], ["2019-09-16", 0], ["2019-09-17", 0], ["2019-09-18", 0], ["2019-09-19", 0], ["2019-09-20", 0], ["2019-09-21", 0], ["2019-09-22", 0], ["2019-09-23", 0], ["2019-09-24", 0], ["2019-09-25", 0], ["2019-09-26", 0], ["2019-09-27", 0], ["2019-09-28", 0], ["2019-09-29", 0], ["2019-09-30", 0], ["2019-10-01", 0], ["2019-10-02", 0], ["2019-10-03", 0], ["2019-10-04", 0], ["2019-10-05", 0], ["2019-10-06", 0], ["2019-10-07", 0], ["2019-10-08", 0], ["2019-10-09", 0], ["2019-10-10", 0], ["2019-10-11", 0], ["2019-10-12", 0], ["2019-10-13", 0], ["2019-10-14", 0], ["2019-10-15", 0], ["2019-10-16", 0], ["2019-10-17", 0], ["2019-10-18", 0], ["2019-10-19", 0], ["2019-10-20", 0], ["2019-10-21", 0], ["2019-10-22", 0], ["2019-10-23", 0], ["2019-10-24", 0], ["2019-10-25", 0], ["2019-10-26", 0], ["2019-10-27", 0], ["2019-10-28", 0], ["2019-10-29", 0], ["2019-10-30", 0], ["2019-10-31", 0], ["2019-11-01", 0], ["2019-11-02", 0], ["2019-11-03", 0], ["2019-11-04", 0], ["2019-11-05", 0], ["2019-11-06", 0], ["2019-11-07", 0], ["2019-11-08", 0], ["2019-11-09", 0], ["2019-11-10", 0], ["2019-11-11", 0], ["2019-11-12", 0], ["2019-11-13", 0], ["2019-11-14", 0], ["2019-11-15", 0], ["2019-11-16", 0], ["2019-11-17", 0], ["2019-11-18", 0], ["2019-11-19", 0], ["2019-11-20", 0], ["2019-11-21", 0], ["2019-11-22", 0], ["2019-11-23", 0], ["2019-11-24", 0], ["2019-11-25", 0], ["2019-11-26", 0], ["2019-11-27", 0], ["2019-11-28", 0], ["2019-11-29", 0], ["2019-11-30", 0], ["2019-12-01", 0], ["2019-12-02", 0], ["2019-12-03", 0], ["2019-12-04", 0], ["2019-12-05", 0], ["2019-12-06", 0], ["2019-12-07", 0], ["2019-12-08", 0], ["2019-12-09", 0], ["2019-12-10", 0], ["2019-12-11", 0], ["2019-12-12", 0], ["2019-12-13", 0], ["2019-12-14", 0], ["2019-12-15", 0], ["2019-12-16", 0], ["2019-12-17", 0], ["2019-12-18", 0], ["2019-12-19", 0], ["2019-12-20", 0], ["2019-12-21", 0], ["2019-12-22", 0], ["2019-12-23", 0], ["2019-12-24", 0], ["2019-12-25", 0], ["2019-12-26", 0], ["2019-12-27", 0], ["2019-12-28", 0], ["2019-12-29", 0], ["2019-12-30", 0], ["2019-12-31", 0], ["2020-01-01", 0], ["2020-01-02", 0], ["2020-01-03", 0], ["2020-01-04", 0], ["2020-01-05", 0], ["2020-01-06", 0], ["2020-01-07", 0], ["2020-01-08", 0], ["2020-01-09", 0], ["2020-01-10", 0], ["2020-01-11", 0], ["2020-01-12", 0], ["2020-01-13", 0], ["2020-01-14", 0], ["2020-01-15", 0], ["2020-01-16", 0], ["2020-01-17", 0], ["2020-01-18", 0], ["2020-01-19", 0], ["2020-01-20", 0], ["2020-01-21", 0], ["2020-01-22", 0], ["2020-01-23", 0], ["2020-01-24", 0], ["2020-01-25", 0], ["2020-01-26", 0], ["2020-01-27", 0], ["2020-01-28", 0], ["2020-01-29", 0], ["2020-01-30", 0], ["2020-01-31", 0], ["2020-02-01", 0], ["2020-02-02", 0], ["2020-02-03", 0], ["2020-02-04", 0], ["2020-02-05", 0], ["2020-02-06", 0], ["2020-02-07", 0], ["2020-02-08", 0], ["2020-02-09", 0], ["2020-02-10", 0], ["2020-02-11", 0], ["2020-02-12", 0], ["2020-02-13", 0], ["2020-02-14", 0], ["2020-02-15", 0], ["2020-02-16", 0], ["2020-02-17", 0], ["2020-02-18", 0], ["2020-02-19", 0], ["2020-02-20", 0], ["2020-02-21", 0], ["2020-02-22", 0], ["2020-02-23", 0], ["2020-02-24", 0], ["2020-02-25", 0], ["2020-02-26", 0], ["2020-02-27", 0], ["2020-02-28", 0], ["2020-02-29", 0], ["2020-03-01", 0], ["2020-03-02", 0], ["2020-03-03", 0], ["2020-03-04", 0], ["2020-03-05", 0], ["2020-03-06", 0], ["2020-03-07", 0], ["2020-03-08", 0], ["2020-03-09", 0], ["2020-03-10", 0], ["2020-03-11", 1], ["2020-03-12", 0], ["2020-03-13", 0], ["2020-03-14", 0], ["2020-03-15", 0], ["2020-03-16", 0], ["2020-03-17", 0], ["2020-03-18", 0], ["2020-03-19", 0], ["2020-03-20", 0], ["2020-03-21", 0], ["2020-03-22", 0], ["2020-03-23", 0], ["2020-03-24", 0], ["2020-03-25", 0], ["2020-03-26", 0], ["2020-03-27", 0], ["2020-03-28", 0], ["2020-03-29", 0], ["2020-03-30", 0], ["2020-03-31", 0], ["2020-04-01", 0], ["2020-04-02", 0], ["2020-04-03", 0], ["2020-04-04", 0], ["2020-04-05", 0], ["2020-04-06", 0], ["2020-04-07", 0], ["2020-04-08", 0], ["2020-04-09", 0], ["2020-04-10", 0], ["2020-04-11", 0], ["2020-04-12", 0], ["2020-04-13", 0], ["2020-04-14", 0], ["2020-04-15", 0], ["2020-04-16", 0], ["2020-04-17", 0], ["2020-04-18", 0], ["2020-04-19", 0], ["2020-04-20", 0], ["2020-04-21", 0], ["2020-04-22", 0], ["2020-04-23", 0], ["2020-04-24", 0], ["2020-04-25", 0], ["2020-04-26", 0], ["2020-04-27", 0], ["2020-04-28", 0], ["2020-04-29", 0], ["2020-04-30", 0], ["2020-05-01", 0], ["2020-05-02", 0], ["2020-05-03", 0], ["2020-05-04", 0], ["2020-05-05", 0], ["2020-05-06", 1], ["2020-05-07", 0], ["2020-05-08", 0], ["2020-05-09", 1], ["2020-05-10", 0], ["2020-05-11", 0], ["2020-05-12", 0], ["2020-05-13", 0], ["2020-05-14", 1], ["2020-05-15", 0], ["2020-05-16", 0], ["2020-05-17", 0], ["2020-05-18", 0], ["2020-05-19", 0], ["2020-05-20", 0], ["2020-05-21", 0], ["2020-05-22", 0], ["2020-05-23", 0], ["2020-05-24", 0], ["2020-05-25", 0], ["2020-05-26", 0], ["2020-05-27", 0], ["2020-05-28", 0], ["2020-05-29", 0], ["2020-05-30", 0], ["2020-05-31", 0], ["2020-06-01", 1], ["2020-06-02", 0], ["2020-06-03", 0], ["2020-06-04", 0], ["2020-06-05", 0], ["2020-06-06", 0], ["2020-06-07", 0], ["2020-06-08", 0], ["2020-06-09", 0], ["2020-06-10", 0], ["2020-06-11", 0], ["2020-06-12", 0], ["2020-06-13", 0], ["2020-06-14", 0], ["2020-06-15", 0], ["2020-06-16", 0], ["2020-06-17", 0], ["2020-06-18", 0], ["2020-06-19", 0], ["2020-06-20", 0], ["2020-06-21", 0], ["2020-06-22", 0], ["2020-06-23", 0], ["2020-06-24", 0], ["2020-06-25", 0], ["2020-06-26", 0], ["2020-06-27", 0], ["2020-06-28", 0], ["2020-06-29", 0], ["2020-06-30", 0], ["2020-07-01", 0], ["2020-07-02", 0], ["2020-07-03", 0], ["2020-07-04", 0], ["2020-07-05", 0], ["2020-07-06", 0], ["2020-07-07", 0], ["2020-07-08", 0], ["2020-07-09", 0], ["2020-07-10", 0], ["2020-07-11", 0], ["2020-07-12", 0], ["2020-07-13", 0], ["2020-07-14", 0], ["2020-07-15", 0], ["2020-07-16", 0], ["2020-07-17", 0], ["2020-07-18", 0], ["2020-07-19", 0], ["2020-07-20", 0], ["2020-07-21", 0], ["2020-07-22", 0], ["2020-07-23", 0], ["2020-07-24", 0], ["2020-07-25", 0], ["2020-07-26", 0], ["2020-07-27", 0], ["2020-07-28", 0], ["2020-07-29", 0], ["2020-07-30", 0], ["2020-07-31", 0], ["2020-08-01", 1], ["2020-08-02", 1], ["2020-08-03", 1], ["2020-08-04", 1], ["2020-08-05", 1], ["2020-08-06", 1], ["2020-08-07", 0], ["2020-08-08", 0], ["2020-08-09", 0], ["2020-08-10", 0], ["2020-08-11", 1]]
         }]
 
     };
