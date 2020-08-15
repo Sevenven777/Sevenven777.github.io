@@ -690,7 +690,7 @@
 <p>这时候就会有一个问题，就是已经没有变量引用对象[11,22,33]和[44,55,66]了，但是因为他们的引用计数器不为0，这两个对象的内存空间没有被回收，所以他们会永远在内存中，而又永远不会被使用到。</p>
 <p>所以为了解决这个问题，就有了标记清除。</p>
 <h2 id="标记清除"><a href="#标记清除" class="headerlink" title="标记清除"></a>标记清除</h2><p>标记清除就是为了解决引用计数器循环引用的问题。</p>
-<p>实习方法就是在Python的底层再去维护一个环形双向链表，这个链表用来存放可能存在循环引用问题的对象。（只有对象可以再放其他元素的对象才会出现循环引用问题，列表，字典，元组和集合）</p>
+<p>实现方法就是在Python的底层再去维护一个环形双向链表，这个链表用来存放可能存在循环引用问题的对象。（只有对象可以再放其他元素的对象才会出现循环引用问题，列表，字典，元组和集合）</p>
 <p>在Python内部，在某种情况下，回去扫描这个存放可能存在循环引用问题的对象的链表，如果发现有循环引用，就把双方的引用计数器都减一，如果引用计数器减为0，回收内存。</p>
 <p>但是标记清除也存在问题：</p>
 <ul>
@@ -720,7 +720,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">v1 &#x3D; 8</span><br><span class="line">v2 &#x3D; 8</span><br></pre></td></tr></table></figure>
 <p>打印一下v1和v2的id，会发现他们的id是相同的。</p>
 <p>而且内存池中的对象，他们的引用计数器不会变为0，因为初始化的时候，他们的引用计数器就为1，这时候没有变量引用他们，所以当引用他们的变量引用后又不再引用他们的时候，他们的引用计数器也不会变为0。</p>
-<h3 id="2-free-list（缓冲池）"><a href="#2-free-list（缓冲池）" class="headerlink" title="2.free_list（缓冲池）"></a>2.free_list（缓冲池）</h3><p>当一个对象的引用计数器变为0时，先不回收，而是把这个对象放到free_list中，当作缓存，这样再创建对象时，就不开辟新的内存，直接使用free_list中的对象的内存，把这块内存初始化，再把这个对象放到refchain中。</p>
+<h3 id="2-free-list"><a href="#2-free-list" class="headerlink" title="2.free_list"></a>2.free_list</h3><p>当一个对象的引用计数器变为0时，先不回收，而是把这个对象放到free_list中，当作缓存，这样再创建对象时，就不开辟新的内存，直接使用free_list中的对象的内存，把这块内存初始化，再把这个对象放到refchain中。</p>
 <p>当然这个缓冲池也是有大小限制的，如果一个对象的引用计数器变为0，而此时缓冲池也已经满了，那么这个对象还是会被直接销毁的。</p>
 <p>float，list，tuple，dict采用这种机制。</p>
 <ul>
@@ -792,7 +792,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-15T18:56:12+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-15T19:11:41+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Aug 15, 2020</p>
@@ -965,7 +965,7 @@
 
 
     <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#引用计数器"><span class="toc-text">引用计数器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-环状双向链表"><span class="toc-text">1.环状双向链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-单纯使用引用计数器进行垃圾回收的问题：循环引用"><span class="toc-text">2.单纯使用引用计数器进行垃圾回收的问题：循环引用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标记清除"><span class="toc-text">标记清除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分代回收"><span class="toc-text">分代回收</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#优化：缓存"><span class="toc-text">优化：缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-内存池"><span class="toc-text">1.内存池</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-free-list（缓冲池）"><span class="toc-text">2.free_list（缓冲池）</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#引用计数器"><span class="toc-text">引用计数器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-环状双向链表"><span class="toc-text">1.环状双向链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-单纯使用引用计数器进行垃圾回收的问题：循环引用"><span class="toc-text">2.单纯使用引用计数器进行垃圾回收的问题：循环引用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标记清除"><span class="toc-text">标记清除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分代回收"><span class="toc-text">分代回收</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#优化：缓存"><span class="toc-text">优化：缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-内存池"><span class="toc-text">1.内存池</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-free-list"><span class="toc-text">2.free_list</span></a></li></ol></li></ol>
     </div>
   </section>
 
