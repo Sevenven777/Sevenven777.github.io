@@ -675,7 +675,7 @@
 </ul>
 <p>其中：</p>
 <ul>
-<li>_ob_next ： refchian中的上一个对象</li>
+<li>_ob_next ： refchain中的上一个对象</li>
 <li>_ob_prev：refchain中的下一个对象</li>
 <li>ob_refnt：引用计数器</li>
 <li>ob_type：是当前对象的类型</li>
@@ -708,7 +708,7 @@
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在Python中维护了一个叫refchain的双向环状链表，这个链表用来存储程序创建的所有对象，每种类型的对象都有一个ob_refcnt引用计数器的值，当有变量引用对象时，引用计数器的值就会加一，当引用对象的变量减少了的时候，引用计数器的值就会减一，当引用计数器变为0时，就会进行垃圾回收。</p>
 <p>但是在Python中，对于有多个元素组成的对象，可能还会有循环引用的问题，为了解决这个问题，Python又引用了标记清除和分代回收，所以在Python内部实际上要维护四个双向环状链表，分别是：</p>
 <ul>
-<li>refchian</li>
+<li>refchain</li>
 <li>0代 700个</li>
 <li>1代 0代扫描10次</li>
 <li>2代 1代扫描10次<br>在源码内部，当达到各自的阈值时，就会扫描链表，发现循环引用就会想相关对象的引用计数器减一，如果引用计数器的值被减为0，那么这个对象就会被销毁，这个对象占用的内存空间就会被回收。</li>
@@ -792,7 +792,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-15T17:28:57+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-15T18:50:55+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Aug 15, 2020</p>
